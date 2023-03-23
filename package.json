@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "antd": "^5.3.2",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react": "^18.2.0",
+    "react-dom": "18.2.0",
+    "react-full-page": "^0.1.12",
+    "react-fully-scrolled": "^1.0.4",
+    "react-icons": "^4.8.0"
   }
 }

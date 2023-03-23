@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { ImFacebook, ImBlogger, BsInstagram, ImWhatsapp  } from "react-icons/all";
 
 export default function NavBar() {
   const router = useRouter();
@@ -42,10 +43,10 @@ export default function NavBar() {
         </div>
 
         <div>
-          <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"><p>전화</p></a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><p>인스타</p></a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><p>페이스북</p></a>
-          <a href="https://blog.naver.com/playonu" target="_blank" rel="noopener noreferrer"><p>블로그</p></a>
+                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"><p><ImWhatsapp/></p></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><p><BsInstagram/></p></a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><p><ImFacebook/></p></a>
+                <a href="https://blog.naver.com/playonu" target="_blank" rel="noopener noreferrer"><p><ImBlogger/></p></a>
         </div>
         
       </div>

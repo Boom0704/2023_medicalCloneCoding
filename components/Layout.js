@@ -2,13 +2,17 @@ import NavBar from "./NavBar";
 import Footer from "./Footer";
 import Seo from "./Seo";
 
+import { useRouter } from "next/router";
+
 export default function Layout({ children }) {
+  const router = useRouter();
   return (
     <>
       <Seo></Seo>
       <NavBar />
       <div>{children}</div>
-      <Footer/>
+      {/* {router.pathname !== "/" && <Footer />} */}
+      <Footer />
     </>
   );
 }
