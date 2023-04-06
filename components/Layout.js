@@ -9,10 +9,9 @@ export default function Layout({ children }) {
   return (
     <>
       <Seo></Seo>
-      <NavBar />
+      {router.pathname !== "/" && <NavBar />}
       <div>{children}</div>
-      {/* {router.pathname !== "/" && <Footer />} */}
-      <Footer />
+      {router.pathname !== "/" && <Footer />}
     </>
   );
 }

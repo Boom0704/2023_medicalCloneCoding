@@ -1,25 +1,25 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ImFacebook, ImBlogger, BsInstagram, ImWhatsapp  } from "react-icons/all";
+import { FaFacebookF, FaBloggerB, FaInstagram, FaWhatsapp  } from "react-icons/fa";
 export default function Footer() {
     const router = useRouter();
     return (
         <footer>
             <div className="table1">
                 <Link href="/intro">
-                    <p className={router.pathname === "/intro" ? "active" : ""}>회사소개</p>
+                    <p>회사소개</p>
                 </Link>
                 <Link href="/product">
-                    <p className={router.pathname === "/product" ? "active" : ""}>제품소개</p>
+                    <p>제품소개</p>
                 </Link>
                 <Link href="/used">
-                    <p className={router.pathname === "/used" ? "active" : ""}>중고제품매입</p>
+                    <p>중고제품매입</p>
                 </Link>
                 <Link href="/service">
-                    <p className={router.pathname === "/service" ? "active" : ""}>서비스센터</p>
+                    <p>서비스센터</p>
                 </Link>
                 <Link href="/customer">
-                    <p className={router.pathname === "/customer" ? "active" : ""}>고객지원</p>
+                    <p>고객지원</p>
                 </Link>
             </div>
             <div className="table2"><p>개인정보처리방침</p></div>
@@ -31,10 +31,10 @@ export default function Footer() {
                 <p>Copyright : This is a footer.</p>
             </div>
             <div className="table4">
-                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"><p><ImWhatsapp/></p></a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><p><BsInstagram/></p></a>
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><p><ImFacebook/></p></a>
-                <a href="https://blog.naver.com/playonu" target="_blank" rel="noopener noreferrer"><p><ImBlogger/></p></a>
+                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer"><p><FaWhatsapp/></p></a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><p><FaInstagram/></p></a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><p><FaFacebookF/></p></a>
+                <a href="https://blog.naver.com/playonu" target="_blank" rel="noopener noreferrer"><p><FaBloggerB/></p></a>
             </div>
 
             <style jsx>{`
