@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from 'react';
 import { FaFacebookF, FaBloggerB, FaInstagram, FaWhatsapp  } from "react-icons/fa";
+import { Table } from '@nextui-org/react';
 
 export default function NavBar() {
   const router = useRouter();
@@ -31,13 +32,14 @@ export default function NavBar() {
 
   
   return (
+  <>
     <nav className={router.pathname === "/" ? "home" : ""}>
-
+    <nav className="subNav">
+    </nav>
       <div className="linkMenu">
         <Link href="/">
           <img src="/vercel.svg" />
         </Link>
-
         <div className="linkTitle">
           <Link href="/intro"
             onMouseEnter={() => showSubMenu(1)}
@@ -57,8 +59,30 @@ export default function NavBar() {
             onMouseLeave={() => hideSubMenu(2)}>
             <p className={`product ${router.pathname === "/product" ? "active" : ""}`}>제품소개</p>
             {subMenus.subMenu2 && (
-              <ul className="sub-menu">
-                <Link href="/product"><li>다시 만들어</li></Link>
+              <ul className="sub-menu-fill">
+                <table style={{width:"100%", height:"100%", borderCollapse: "Collapse"}}>
+                  <thead>
+                      <tr>
+                          <td><p className="sub-menu-f"><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                      </tr>
+                      <tr>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                          <td><p><FaWhatsapp/></p></td>
+                      </tr>
+                  </thead>
+              </table>
+                {/* <Link href="/product"><li>다시 만들어</li></Link> */}
               </ul>
             )}
           </Link>
@@ -118,13 +142,45 @@ export default function NavBar() {
         </div>
         
       </div>
-      <nav className="subNav">
-      </nav>
       <style jsx>{`
+        .subNav{
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 350px;
+          padding: 10px;
+          background-color: #fff;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+        }
+        .linkMenu{
+          background-color: #0f0;
+          display: flex;
+          justify-content: space-between;
+          padding-right: 50px;
+          padding-left: 50px;
+          position: absolute; z-index: 2;
+          width: 100%
+          height: 10px;
+        }
+        .buttonNav{
+          background-color: #f00;
+        }
         .sub-menu{
           position: absolute;
           border-top: solid;
           border-color: cornflowerblue;
+        }
+        .sub-menu-fill{
+          position: absolute;
+          border-top: solid;
+          border-color: cornflowerblue;
+          width: 70%;
+          height: 200%;
+          background-color: #f00;
+          top: 100%;
+          left: 10%;
+        }
+        .sub-menu-fill td{
         }
         nav {
           display: flex;
@@ -135,7 +191,6 @@ export default function NavBar() {
           background-color: rgba(0, 0, 0, 0.7); 
           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
             rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-          z-index: 9999;
         }
         .home {
           background-color: rgba(0, 0, 0, 0.5); 
@@ -151,14 +206,7 @@ export default function NavBar() {
           display: flex;
           gap: 10px;
         }
-        .linkMenu{
-          // position: absolute;
-          display: flex;
-          justify-content: space-between;
-          padding-right: 50px;
-          padding-left: 50px;
-          width: 100%
-        }
+
         .linkTitle p{
           padding: 20px;
           font-size: 22px;
@@ -181,17 +229,12 @@ export default function NavBar() {
           padding: 5px;
           font-size: 30px;
         }
-        // .subNav{
-        //   top: 100%;
-        //   left: 0;
-        //   width: 100%;
-        //   height: 350px;
-        //   padding: 10px;
-        //   background-color: #000;
-        //   box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
-        //   z-index: 9999;
-        // }
+        td {
+          border: 1px solid black;
+          text-align: center;
+        }
       `}</style>
     </nav>
+  </>
   );
 }
